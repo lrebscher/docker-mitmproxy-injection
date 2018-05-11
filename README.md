@@ -7,13 +7,13 @@ This repository contains the code for a docker image that runs a proxy which inj
 * contains an addon that injects local scripts and html into a specific webpage
 * uses the command-line-version `mitmdump` instead of the interactive `mitmproxy` so it can be run as a service on a cloud platfrom such as Kubernetes
 * has basic authentication configured to restrict access to the proxy
-* disables caching by using the [anticaching flag](https://docs.mitmproxy.org/stable/overview-features/#anticache)
+* removes caching headers by setting the [anticaching flag](https://docs.mitmproxy.org/stable/overview-features/#anticache)
 
 
 ## Start injecting ...
 
 * Build: `docker build . -t proxy`
-* Run: `docker run proxy`
+* Run: `docker run -p 8080:8080 -t proxy`
 
 
 ## Authentication
@@ -21,4 +21,4 @@ This repository contains the code for a docker image that runs a proxy which inj
 Default credentials are set in the Dockerfile. You can configure the credentials by passing the environment variables `USER` and `PASSWORD` when running the image.
 
 Example:
-`docker run proxy -e USER=admin PASSWORD=password -t proxy`
+`docker run -p 8080:8080 -e USER=admin -e PASSWORD=password -t proxy`
