@@ -5,9 +5,9 @@ This repository contains the code for a docker image that runs a proxy which inj
 
 ## Modifications to the basic image
 * contains an addon that injects local scripts and html into a specific webpage
-* uses the command-line-version `mitmdump` instead of the interactive `mitmproxy` so it can be run as a service on a cloud platfrom such as Kubernetes
+* uses the command-line-version `mitmdump` instead of the interactive `mitmproxy` so it can be run as a service on a cloud platform such as Kubernetes
 * has basic authentication configured to restrict access to the proxy
-* removes caching headers by setting the [anticaching flag](https://docs.mitmproxy.org/stable/overview-features/#anticache)
+* removes caching headers by setting the [anticache flag](https://docs.mitmproxy.org/stable/overview-features/#anticache)
 
 
 ## Start injecting ...
